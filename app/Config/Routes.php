@@ -31,7 +31,22 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Dashboard\Arsip::index');
+$routes->get('/about', 'Dashboard\Arsip::about');
+$routes->get('/delete/(:segment)', 'Dashboard\Arsip::delete/$1');
+$routes->get('/unduh/(:segment)', 'Dashboard\Arsip::unduh/$1');
+$routes->get('/detail/(:segment)', 'Dashboard\Arsip::detail/$1');
+$routes->get('/add', 'Dashboard\Arsip::add');
+$routes->get('/edit/(:segment)', 'Dashboard\Arsip::edit/$1');
+
+
+$routes->post('/insertData', 'Dashboard\Arsip::insertData');
+$routes->post('/edit/update', 'Dashboard\Arsip::update');
+
+
+
+
+
 
 /*
  * --------------------------------------------------------------------
